@@ -14,17 +14,17 @@ var rollbar = new Rollbar({
 app.use(express.json())
 
 app.get ('/', (req, res) =>  {
-    res.sendFile(path.join(__dirname, '../index.html'))
+    res.sendFile(path.join(__dirname, './public/index.html'))
     rollbar.info ('html was loaded!!')
 })
 
-app.get ('/css', (req, res) =>  {
-    res.sendFile(path.join(__dirname, '../styles.css'))
+app.get ('/styles', (req, res) =>  {
+    res.sendFile(path.join(__dirname, './public/styles.css'))
     
 })
 
 app.get('/js',(req, res) => {
-    res.sendFile(path.join(__dirname, '../index.js'))
+    res.sendFile(path.join(__dirname, './public/index.js'))
 })
 
 
